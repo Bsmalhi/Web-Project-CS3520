@@ -19,33 +19,22 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
         <style>
             #topContainer{       
-                background-image:url("Include/Images/pic1.jpeg");
+                background-image:url("Include/Images/forest.jpeg");
                 width: 100%;
-                height: 100%;
-                background-size: auto;
-               
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
             }
             h1{
                 font-size: 3em;
             }
-            #onetry{
-                margin-top: 50px;
-            }
-            .user{
-                font-size: 1.5em;
-            }
-            .pass{
-                font-size: 1.5em;
-            }
             .padd{
-                margin-bottom: 5px;
-            }
-            .padd1{
-                margin-bottom: 5px;
-                margin-left: 22px;
+                margin-left: 30px;
             }
             .marginTop{
                 margin-top: 50px;
+                margin-bottom: 50px;
             }
             #topRow{
                 margin-top: 100px;
@@ -59,32 +48,33 @@
                 <a class="navbar-brand">SnapMail</a>
                 <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="#home">Home</a></li>
+                            <li class=""><a href="Welcome.jsp">Home</a></li>
                             <li><a href="#about">About</a></li>
                             <li><a href="#download">Download The App</a></li>
+                            <li class="active"><a href="#register">Register Account</a></li>
                         </ul>                                                                
                 </div>
                 </div>
         </div>
         
-                <div class="container contentContainer" id="topContainer">
-                    <div class="col-md-6 col-md-offset-3" id="topRow">
+        <div class="container" id="topContainer" style="height: 700px;">
+                    <div class="col-lg-6 col-lg-offset-3" id="topRow">
                         <h1 class="marginTop">Create Account</h1>
                         <form action="LoginAuth" methods="post" class="navbar-form navbar-center"/>
                             <input type="hidden" name="action" value="create" class="form-control"/>
-                            <label class="padd"> Firstname</label>
-                            <input class="padd" type="text" name="firstname" class="form-control"/><br>
-                            <label class="padd"> Lastname</label>
-                            <input class="padd" type="text" name="lastname" class="form-control"/><br>
-                            <label class="padd"> Email</label>
-                            <input class="padd1" type="text" name="email" class="form-control"/><br>
-                            <label class="padd"> Username</label>
-                            <input class="padd" type="text" name="username" class="form-control"/><br>
-                            <label class="padd"> password</label>
-                            <input class="padd" type="password" name="password" class="form-control"/><br>
+                            <label > Firstname</label>
+                            <input  type="text" name="firstname" class="form-group"/><br>
+                            <label > Lastname</label>
+                            <input type="text" name="lastname" class="form-group"/><br>
+                            <label  > Email  </label>
+                            <input  class="padd" type="text" name="email" class="form-group"/><br>
+                            <label > Username</label>
+                            <input type="text" name="username" class="form-group"/><br>
+                            <label > Password</label>
+                            <input type="password" name="password" class="form-group"/><br>
                             <br>
-                            <label class="padd"></label>
-                            <input class="padd" type="submit" value="Login" class="btn btn-success"/>   
+                            <label ></label>
+                            <input  type="submit" value="Login" class="btn btn-success"/>   
                         </form>
                     </div>
                 </div>
