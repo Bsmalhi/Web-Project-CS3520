@@ -10,7 +10,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/style.css">
+        
         <title>Register</title>
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
@@ -21,6 +21,7 @@
             #topContainer{       
                 background-image:url("Include/Images/forest.jpeg");
                 width: 100%;
+                height:100vh;
                 -webkit-background-size: cover;
                 -moz-background-size: cover;
                 -o-background-size: cover;
@@ -40,6 +41,9 @@
                 margin-top: 100px;
                 text-align: center;
             }
+            .footer{
+                margin-top: 22%;
+            }
         </style>
     </head>
     <body>
@@ -49,15 +53,15 @@
                 <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li class=""><a href="Welcome.jsp">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#download">Download The App</a></li>
+                            <li><a href="About.jsp">About</a></li>
+                            <li><a href="DownloadApp.jsp">Download The App</a></li>
                             <li class="active"><a href="#register">Register Account</a></li>
                         </ul>                                                                
                 </div>
                 </div>
         </div>
         
-        <div class="container" id="topContainer" style="height: 700px;">
+        <div class="container" id="topContainer" >
                     <div class="col-lg-6 col-lg-offset-3" id="topRow">
                         <h1 class="marginTop">Create Account</h1>
                         <form action="SignUp" method="post" class="navbar-form navbar-center"/>
@@ -73,9 +77,15 @@
                             <input  class="padd" type="text" name="email" class="form-group"/><br>
                             <br>
                             <label ></label>
-                            <input  type="submit" value="Login" class="btn btn-success"/>   
+                            <input  type="submit" value="Create" class="btn btn-success"/>   
                         </form>
+                        
+                        <div class="footer">
+                        <%@ include file="Footer.jsp" %>
+                        </div>
                     </div>
+            
                 </div>
+        
     </body>
 </html>
