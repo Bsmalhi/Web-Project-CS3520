@@ -12,7 +12,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Landing Page for Some App</title>
+    <title>Snap Chat</title>
        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
         <!-- jQuery library -->
@@ -72,8 +72,8 @@
     </style>
 
 </head>
-     <body>
-          <div class="navbar navbar-default navbar-fixed-top">
+    <body>
+        <div class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -83,7 +83,7 @@
                         <span class="icon-bar"></span>
                         
                        </button>
-                       <a class="navbar-brand">SnapMail</a> 
+                       <a class="navbar-brand">Snap Chat</a> 
                  </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
@@ -91,11 +91,11 @@
                             <li><a href="#about">About</a></li>
                             <li><a href="#download">Download The App</a></li>
                         </ul>                                                                
-                       </div>
+                    </div>
                 <div class="up">
-                        <form action="LoginAuth" methods="post" class="navbar-form navbar-right" >                            
+                        <form action="SignIn" method="post" class="navbar-form navbar-right" >                 
                             <div class="form-group">
-                                <input type="username" name="username" placeholder="username" class="form-control">
+                                <input type="text" name="username" placeholder="Username" class="form-control">
                             </div>
                             <div class="form-group">
                                 <input type="password" name="password" placeholder="Password" class="form-control">
@@ -104,10 +104,8 @@
                             <p class="right"><b>Not registered? <a href ="Register.jsp">Register here</a></b></p>
                         </form>
                 </div>
-                        
-                    </div>
-                
-                </div>
+            </div>
+        </div>
        
          <div class="container contentContainer" id="topContainer">
              <div class="row">
@@ -144,19 +142,19 @@
 
                 <div class="col-md-4 marginTop">
                     <h3><span class="glyphicon glyphicon-envelope">Access Emails</h3>
-                    <p>A brief discription of the one of the best feature of ths extraordinary app you made. Maybe little more text can help to provide more information on the features of my amazing app today.</p>
+                    <p>A brief description of the one of the best feature of ths extraordinary app you made. Maybe little more text can help to provide more information on the features of my amazing app today.</p>
                     <button class="btn btn-success marginTop"> Sign up!</button>
                 </div>
                  
                 <div class="col-md-4 marginTop">
                     <h3><span class="glyphicon glyphicon-pencil">Send Emails</h3>
-                    <p>A brief discription of the one of the best feature of ths extraordinary app you made. Maybe little more text can help to provide more information on the features of my amazing app today.</p>
+                    <p>A brief description of the one of the best feature of ths extraordinary app you made. Maybe little more text can help to provide more information on the features of my amazing app today.</p>
                     <button class="btn btn-success marginTop"> Sign up!</button>
                 </div>
 
                 <div class="col-md-4 marginTop">
                     <h3><span class="glyphicon glyphicon-tasks">Subscribe for Newsletter</h3>
-                    <p>A brief discription of the one of the best feature of ths extraordinary app you made. Maybe little more text can help to provide more information on the features of my amazing app today.</p>
+                    <p>A brief description of the one of the best feature of ths extraordinary app you made. Maybe little more text can help to provide more information on the features of my amazing app today.</p>
                     <button class="btn btn-success marginTop"> Sign up!</button>
                 </div>
 

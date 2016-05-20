@@ -11,7 +11,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
-        <title>Login Authorization</title>
+        <title>Register</title>
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -60,25 +60,22 @@
         <div class="container" id="topContainer" style="height: 700px;">
                     <div class="col-lg-6 col-lg-offset-3" id="topRow">
                         <h1 class="marginTop">Create Account</h1>
-                        <form action="LoginAuth" methods="post" class="navbar-form navbar-center"/>
-                            <input type="hidden" name="action" value="create" class="form-control"/>
-                            <label > Firstname</label>
-                            <input  type="text" name="firstname" class="form-group"/><br>
-                            <label > Lastname</label>
-                            <input type="text" name="lastname" class="form-group"/><br>
-                            <label  > Email  </label>
-                            <input  class="padd" type="text" name="email" class="form-group"/><br>
+                        <form action="SignUp" method="post" class="navbar-form navbar-center"/>
                             <label > Username</label>
                             <input type="text" name="username" class="form-group"/><br>
                             <label > Password</label>
                             <input type="password" name="password" class="form-group"/><br>
+                            <label > First Name</label>
+                            <input  type="text" name="firstname" class="form-group"/><br>
+                            <label > Last Name</label>
+                            <input type="text" name="lastname" class="form-group"/><br>
+                            <label  > Email  </label>
+                            <input  class="padd" type="text" name="email" class="form-group"/><br>
                             <br>
                             <label ></label>
                             <input  type="submit" value="Login" class="btn btn-success"/>   
                         </form>
                     </div>
                 </div>
-            
-        
     </body>
 </html>
