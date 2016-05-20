@@ -7,35 +7,32 @@
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 /**
  *
  * @author Will
  */
 public class User implements Serializable{
-    private String userName,password;
-    private ArrayList<String> email;
+    private String username, password, email, firstname, lastname;
+    private Calendar dob;
+    private ArrayList<Message> message;
 
-    public ArrayList<String> getEmail() {
-        return email;
-    }
-
-    public void setEmail(ArrayList<String> email) {
-        this.email = email;
-    }
-
-    public User(String userName, String password) {
-        this.email = new ArrayList<String>();
-        this.userName = userName;
+    public User(String username, String password, String email, String firstname, String lastname, Calendar dob) {
+        this.username = username;
         this.password = password;
+        this.email = email;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.dob = dob;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -45,8 +42,45 @@ public class User implements Serializable{
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    public void addEmail(String obj){
-        email.add(obj);
+
+    public String getEmail() {
+        return email;
     }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public Calendar getDob() {
+        return dob;
+    }
+
+    public void setDob(Calendar dob) {
+        this.dob = dob;
+    }
+
+    public ArrayList<Message> getMessage() {
+        return message;
+    }
+
+    public void setMessage(ArrayList<Message> message) {
+        this.message = message;
+    }
+    
 }

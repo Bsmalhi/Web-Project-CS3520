@@ -14,14 +14,13 @@ import java.util.List;
 public class UserDB {
     private static List<User> userDB = new ArrayList();
     
-    public static void add(String userName, String password){
-        User newUser = new User(userName, password);
+    public static void add(User newUser){
         userDB.add(newUser);
     }
     
-    public static User find(String userName, String password){
+    public static User find(String username){
         for (User user: userDB){
-            if (user.getUserName().equals(userName) && user.getPassword().equals(password)){
+            if (user.getUsername().equals(username)){
                 return user;
             }
         }

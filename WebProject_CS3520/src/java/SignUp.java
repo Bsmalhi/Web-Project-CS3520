@@ -6,11 +6,13 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Calendar;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -30,7 +32,38 @@ public class SignUp extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        String url = "/index.jsp";
+        HttpSession session = request.getSession();
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String firstname = request.getParameter("firstname");
+        String lastname = request.getParameter("lastname");
+        String email = request.getParameter("email");
+        String year = request.getParameter("year");
+        String month = request.getParameter("month");
+        String day = request.getParameter("day");
+        
+        if (year == null || month == null || day == null){
+            year = "1990";
+            month = "1";
+            day = "1";
+        }
+        
+        User user = UserDB.find(username);
+        if (user == null){
+            url = "/Welcome.jsp";
+            
+            Calendar dob = Calendar.getInstance();
+            dob.clear();
+            dob.set(Integer.parseInt(month), Integer.parseInt(month), Integer.parseInt(day));
+            
+            User newUser = new User(username, password, email, firstname, lastname, dob);
+            UserDB.add(newUser);
+        }else{
+            url = "/Register.jsp";
+            System.err.println("User existed!!!");
+        }
+        this.getServletContext().getRequestDispatcher(url).forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
