@@ -10,12 +10,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author baljotmalhi
  */
-public class LoginAuth extends HttpServlet {
+public class SignIn extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -28,19 +29,23 @@ public class LoginAuth extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet LoginAuth</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet LoginAuth at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        String url = "/index.jsp";
+        HttpSession session = request.getSession();
+        String userName = request.getParameter("username");
+        String password = request.getParameter("password");
+        System.out.println("Servlet Started");
+        System.out.println("sign in action");
+        User user = UserDB.find(userName, password);
+        if (user != null){
+            System.out.println("Sign up successfully");
+            url = "/emailManagement.jsp";
+            session.setAttribute("user", user);
+        }else{
+            System.out.println("Username password did not match");
+            System.out.println("sign up action");
+            url = "/index.jsp";
         }
+        this.getServletContext().getRequestDispatcher(url).forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -81,5 +86,4 @@ public class LoginAuth extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }
