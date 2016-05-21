@@ -20,12 +20,19 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         
     <style type="text/css">
-        .navbar-brand{
+    .navbar-brand{
         font-size: 1.8em;
     }
     #topRow{
         margin-top: 50px;
         text-align: center;
+    }
+    .marginTop{
+                margin-top: 50px;
+                margin-bottom: 50px;
+    }          
+    .footer{
+        margin-top: 60%;
     }
     </style>
     
@@ -55,8 +62,13 @@
         </div>
                 <div class="container contentContainer">
                     <div class="col-md-6 col-md-offset-3" id="topRow">
-                        <h1> About Creators</h1>
+                        <h1 class="marginTop"> About Creators</h1>
+                        
+                        <div class="footer">
+                        <%@ include file="Footer.jsp" %>
+                        </div>
                     </div>
+                    
                 </div>
     </body>
 </html>

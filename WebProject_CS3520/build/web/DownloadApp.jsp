@@ -37,10 +37,21 @@
         height:100vh;
     }
     .footer{
-                margin-top: 60%;
+                margin-top: 40%;
                 
     }
-  
+    .marginTop{
+                margin-top: 50px;
+                margin-bottom: 50px;
+    }
+    p{
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    .lead{
+        font-size: 1.35em;
+        font-weight: bolder
+    }
     </style>
     
     </head>
@@ -69,8 +80,11 @@
         </div>
         <div class="container contentContainer"  id="background" >
             <div class="col-md-6 col-md-offset-3" id="topRow">
-                <h1> Downloading Our App</h1>
-            
+                <h1 class="marginTop"> Downloading Our App</h1>
+                <p class="lead"> Thank you, for showing your Interest in our Application. </p>
+                <p>We are still working on launching our App soon. </p>
+                <p>Please come back later to check for updates on the App.</p>
+                <p> Till then please be patient. Thanks!</p>
                 
             <div class="footer">
                 <b><%@ include file="Footer.jsp" %></b>

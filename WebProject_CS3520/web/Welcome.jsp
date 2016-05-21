@@ -65,6 +65,9 @@
     .up{
         margin-top: -45px;
     }
+    .centerTitle{
+        
+    }
     </style>
 
 </head>
@@ -97,7 +100,7 @@
                                 <input type="password" name="password" placeholder="Password" class="form-control">
                             </div>
                             <button type="submit" class="btn btn-success">Login</button>
-                            <p class="right"><b>Not registered? <a href ="Register.jsp">Register here</a></b></p>
+                            <p class="right"><b>Not registered? <a href ="Register.jsp">Register here</a></b> Or <b>Admin Login?<a href ="Admin.jsp">Admin SignIn</a></b></p>
                         </form>
                 </div>
             </div>
@@ -162,7 +165,7 @@
              
              <div class="row">
                  
-             <h1 class="center title">Download The App! </h1>
+                 <h1 class="center title"><a href="DownloadApp.jsp" style="text-decoration:none">Download The App! </a></h1>
              <p class="lead center"> </p>
              <p class="center"><img src="Include/Images/appleLogo.png" class="appImage"/> </p>
              <p class="center"><img src=""></p>
