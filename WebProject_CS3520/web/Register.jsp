@@ -58,23 +58,23 @@
                             <li class="active"><a href="#register">Register Account</a></li>
                         </ul>                                                                
                 </div>
-                </div>
+            </div>
         </div>
         
         <div class="container" id="topContainer" >
                     <div class="col-lg-6 col-lg-offset-3" id="topRow">
                         <h1 class="marginTop">Create Account</h1>
                         <form action="SignUp" method="post" class="navbar-form navbar-center"/>
-                            <label > Username</label>
+                            <label> Username</label>
                             <input type="text" name="username" class="form-group"/><br>
-                            <label > Password</label>
+                            <label> Password</label>
                             <input type="password" name="password" class="form-group"/><br>
-                            <label > First Name</label>
+                            <label> First Name</label>
                             <input  type="text" name="firstname" class="form-group"/><br>
-                            <label > Last Name</label>
+                            <label> Last Name</label>
                             <input type="text" name="lastname" class="form-group"/><br>
-                            <label  > Email  </label>
-                            <input  class="padd" type="text" name="email" class="form-group"/><br>
+                            <label> Email  </label>
+                            <input class="padd" type="text" name="email" class="form-group"/><br>
                             <br>
                             <label ></label>
                             <input  type="submit" value="Create" class="btn btn-success"/>   

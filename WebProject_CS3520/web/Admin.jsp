@@ -1,15 +1,15 @@
 <%-- 
-    Document   : DownloadApp
-    Created on : May 19, 2016, 11:27:39 PM
+    Document   : Admin
+    Created on : May 21, 2016, 12:32:32 AM
     Author     : baljotmalhi
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta charset="utf-8">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Snap Chat</title>
@@ -20,44 +20,30 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         
     <style type="text/css">
-        .navbar-brand{
-        font-size: 1.8em;
+    .marginTop{
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
     #topRow{
-        margin-top: 50px;
+        margin-top: 100px;
         text-align: center;
     }
-    #background{
-        background: url("Include/Images/Lakeside.jpeg") no-repeat center center fixed; 
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        width: 100%;
-        height:100vh;
-    }
     .footer{
-                margin-top: 40%;
-                
+        margin-top: 45%;
     }
-    .marginTop{
-                margin-top: 50px;
-                margin-bottom: 50px;
-    }
-    p{
-        font-size: 1.2em;
-        font-weight: bold;
-    }
-    .lead{
-        font-size: 1.35em;
-        font-weight: bolder
+    .navbar-brand{
+        font-size: 1.8em;
+    }    
+    #topContainer{
+        background-color: lightblue;
+        width: 100%;
+        height: 100vh;
     }
     </style>
-    
-    </head>
-    
+
+  </head>
     <body>
-        <div class="navbar navbar-default navbar-fixed-top">
+       <div class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -66,31 +52,45 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         
-                       </button>
+                    </button>
                        <a class="navbar-brand">Snap Chat</a> 
-                 </div>
+                </div>
                 <div class="collapse navbar-collapse" >
                         <ul class="nav navbar-nav">
                             <li><a href="Welcome.jsp">Home</a></li>
                             <li><a href="About.jsp">About</a></li>
-                            <li class="active"><a href="#download">Download App</a></li>
+                            <li><a href="DownloadApp.jsp">Download App</a></li>
+                            <li class="active"><a href="#admin">Admin Login</a></li>
                         </ul>                                                                
                 </div>
             </div>
-        </div>
-        <div class="container contentContainer"  id="background" >
-            <div class="col-md-6 col-md-offset-3" id="topRow">
-                <h1 class="marginTop"> Downloading Our App</h1>
-                <p class="lead"> Thank you, for showing your Interest in our Application. </p>
-                <p>We are still working on launching our App soon. </p>
-                <p>Please come back later to check for updates on the App.</p>
-                <p> Till then please be patient. Thanks!</p>
+       </div>
+        <div class="container" id="topContainer" >
+            <div class="col-lg-6 col-lg-offset-3" id="topRow">
+                <h1 class="marginTop">Login Information</h1>
+                <form action="SignUp" method="post" class="navbar-form navbar-center"/>
+                <div class="form-group">
+                    <label> Username</label>
+                    <input type="text" name="username" class="form-control"/><br>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label> Password</label>
+                    <input type="password" name="password" class="form-control"/><br>
+                </div>
+                <br>
+                    <label ></label>
+                    <input  type="submit" value="Login" class="btn btn-success"/>   
+                </form>
+                
                 
             <div class="footer">
-                <b><%@ include file="Footer.jsp" %></b>
+            <%@ include file="Footer.jsp" %>
             </div>
-            </div>
-            
+             </div>
+           
         </div>
+        
+        
     </body>
 </html>
