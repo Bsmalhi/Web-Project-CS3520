@@ -12,9 +12,7 @@ import java.sql.*;
  * @author Will
  */
 public class DatabaseManagement {
-    private static String dbURL = "jdbc:mysql://localhost:3306";
-    private static String username = "root";
-    private static String password = "root";
+    private static String dbURL = "jdbc:mysql://willsuwei.com:3306";
     private static Connection connection;
     private static Statement statement;
     
