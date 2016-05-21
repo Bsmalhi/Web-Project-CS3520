@@ -1,3 +1,5 @@
+package com.willsuwei.cs3520;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -7,6 +9,7 @@
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,8 +17,9 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author baljotmalhi
+ * @author Will
  */
+@WebServlet(urlPatterns = {"/SignIn"})
 public class SignIn extends HttpServlet {
 
     /**
@@ -29,21 +33,18 @@ public class SignIn extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = "/index.jsp";
+        String url = "/Welcome.jsp";
         HttpSession session = request.getSession();
         String userName = request.getParameter("username");
         String password = request.getParameter("password");
-        System.out.println("Servlet Started");
-        System.out.println("sign in action");
-        User user = UserDB.find(userName, password);
-        if (user != null){
+        User user = UserDB.find(userName);
+        if (user != null && user.getPassword().equals(password)){
             System.out.println("Sign up successfully");
-            url = "/emailManagement.jsp";
+            url = "/Main.jsp";
             session.setAttribute("user", user);
         }else{
-            System.out.println("Username password did not match");
-            System.out.println("sign up action");
-            url = "/index.jsp";
+            System.err.println("Username password did not match");
+            url = "/Welcome.jsp";
         }
         this.getServletContext().getRequestDispatcher(url).forward(request, response);
     }
