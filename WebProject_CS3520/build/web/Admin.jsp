@@ -68,7 +68,7 @@
         <div class="container" id="topContainer" >
             <div class="col-lg-6 col-lg-offset-3" id="topRow">
                 <h1 class="marginTop">Login Information</h1>
-                <form action="SignUp" method="post" class="navbar-form navbar-center"/>
+                <form action="SignIn" method="post" class="navbar-form navbar-center"/>
                 <div class="form-group">
                     <label> Username</label>
                     <input type="text" name="username" class="form-control"/><br>
@@ -80,7 +80,7 @@
                 </div>
                 <br>
                     <label ></label>
-                    <input  type="submit" value="Login" class="btn btn-success"/>   
+                    <input  type="submit" value="Login" class="btn btn-success"/><a href="AdminMain.jsp"> Login</a>   
                 </form>
                 
                 

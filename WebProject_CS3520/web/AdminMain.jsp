@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Admin
-    Created on : May 21, 2016, 12:32:32 AM
+    Document   : AdminMain
+    Created on : May 22, 2016, 10:23:54 AM
     Author     : baljotmalhi
 --%>
 
@@ -29,7 +29,7 @@
         text-align: center;
     }
     .footer{
-        margin-top: 45%;
+        margin-top: 30%;
     }
     .navbar-brand{
         font-size: 1.8em;
@@ -38,6 +38,10 @@
         background-color: lightblue;
         width: 100%;
         height: 100vh;
+    }
+    #textArea{
+        width: 400px;
+        height: 200px;
     }
     </style>
 
@@ -60,33 +64,29 @@
                             <li><a href="Welcome.jsp">Home</a></li>
                             <li><a href="About.jsp">About</a></li>
                             <li><a href="DownloadApp.jsp">Download App</a></li>
-                            <li class="active"><a href="#admin">Admin Login</a></li>
+                            <li class="active"><a href="#adminMain">Admin Page</a></li>
                         </ul>                                                                
                 </div>
             </div>
        </div>
         <div class="container" id="topContainer" >
             <div class="col-lg-6 col-lg-offset-3" id="topRow">
-                <h1 class="marginTop">Login Information</h1>
-                <form action="SignIn" method="post" class="navbar-form navbar-center"/>
+                <h1 class="marginTop">Welcome to Admin Page</h1>
+                <h2 class="lead">Admin can send email to all the Users in this App </h2>
+                <form action="SendEmail" method="post" class="navbar-form navbar-center"/>
                 <div class="form-group">
-                    <label> Username</label>
-                    <input type="text" name="username" class="form-control"/><br>
+                    <label> Send Email</label>
+                    <input type="text" name="textBox" class="form-control" id="textArea"/><br>
                 </div>
-                <br>
-                <div class="form-group">
-                    <label> Password</label>
-                    <input type="password" name="password" class="form-control"/><br>
-                </div>
-                <br>
+                
                     <label ></label>
-                    <input  type="submit" value="Login" class="btn btn-success"/><a href="AdminMain.jsp"> Login</a>   
+                    <input type="submit" value="Send" class="btn btn-success"/>   
                 </form>
                 
                 
-            <div class="footer">
-            <%@ include file="Footer.jsp" %>
-            </div>
+                <div class="footer">
+                <%@ include file="Footer.jsp" %>
+                </div>
              </div>
            
         </div>
