@@ -84,6 +84,7 @@ public class UserDB {
         
             PreparedStatement ps = null;
             String query = "SELECT * FROM cs3520.user WHERE username = ?";
+            ps = connection.prepareStatement(query);
             ps.setString(1, username);
             ResultSet rs = ps.executeQuery();
             if (rs.next()){
