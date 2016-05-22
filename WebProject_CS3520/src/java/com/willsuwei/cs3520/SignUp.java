@@ -35,7 +35,6 @@ public class SignUp extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = "/index.jsp";
-        HttpSession session = request.getSession();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String firstname = request.getParameter("firstname");
@@ -44,22 +43,11 @@ public class SignUp extends HttpServlet {
         String year = request.getParameter("year");
         String month = request.getParameter("month");
         String day = request.getParameter("day");
-        
-        if (year == null || month == null || day == null){
-            year = "1990";
-            month = "1";
-            day = "1";
-        }
-        
+                
         User user = UserDB.find(username);
         if (user == null){
-            url = "/Welcome.jsp";
-            
-            Calendar dob = Calendar.getInstance();
-            dob.clear();
-            dob.set(Integer.parseInt(month), Integer.parseInt(month), Integer.parseInt(day));
-            
-            User newUser = new User(username, password, email, firstname, lastname, dob);
+            url = "/Welcome.jsp";            
+            User newUser = new User(username, password, email, firstname, lastname, year, month, day);
             UserDB.add(newUser);
         }else{
             url = "/Register.jsp";
