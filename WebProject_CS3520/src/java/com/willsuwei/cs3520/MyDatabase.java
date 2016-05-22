@@ -20,6 +20,10 @@ public class MyDatabase {
     private static String username = "cs3520";
     private static String password = "cs3520";
     private static Connection connection;
+
+    public static Connection getConnection() {
+        return connection;
+    }
     
     public static void InitiallizeConnection(){
         try{
