@@ -17,8 +17,7 @@ import java.util.Calendar;
  */
 public class User implements Serializable{
     private String username, password, email, firstname, lastname, year, month, day;
-    private ArrayList<Message> message;
-
+    
     public User(String username, String password, String email, String firstname, String lastname, String year, String month, String day) {
         this.username = username;
         this.password = password;
@@ -94,14 +93,4 @@ public class User implements Serializable{
     public void setDay(String day) {
         this.day = day;
     }
-
-    public ArrayList<Message> getMessage() {
-        return message;
-    }
-
-    public void setMessage(ArrayList<Message> message) {
-        this.message = message;
-    }
-    
-
 }
