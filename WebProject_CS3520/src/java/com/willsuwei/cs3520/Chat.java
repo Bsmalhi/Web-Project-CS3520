@@ -58,6 +58,9 @@ public class Chat extends HttpServlet {
                 } else{
                     request.setAttribute("message", "User not found");
                 }
+                System.out.println("SEND!!!!!!!!!!!!!");
+            } else if (action.equals("SAVE")){
+                System.out.println("SAVE!!!!!!!!!!!!!");
             } else if (action.equals("DELETE")){
                 if (user.getMessage().size() > 0){
                     int id = Integer.parseInt(request.getParameter("id"));
