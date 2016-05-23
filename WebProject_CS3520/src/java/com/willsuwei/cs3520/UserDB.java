@@ -68,6 +68,41 @@ public class UserDB {
         }
     }
     
+    public static void update(User newUser){
+        
+        try{
+            MyDatabase.InitiallizeConnection();
+            Connection connection = MyDatabase.getConnection();
+        
+            PreparedStatement ps = null;
+            String query = "UPDATE cs3520.user SET "
+                    + "password=?, "
+                    + "email=?, "
+                    + "firstname=?, "
+                    + "lastname=?, "
+                    + "year=?, "
+                    + "month=?, "
+                    + "day=? "
+                    + "WHERE username=?";
+            
+            ps = connection.prepareStatement(query);
+            ps.setString(1, newUser.getPassword());
+            ps.setString(2, newUser.getEmail());
+            ps.setString(3, newUser.getFirstname());
+            ps.setString(4, newUser.getLastname());
+            ps.setString(5, newUser.getYear());
+            ps.setString(6, newUser.getMonth());
+            ps.setString(7, newUser.getDay());
+            ps.setString(8, newUser.getUsername());
+            ps.executeUpdate();
+        } catch (Exception e){
+            System.out.println(e);
+            e.printStackTrace();
+        } finally{
+            MyDatabase.CloseConnection();
+        }
+    }
+    
     public static User find(String username){        
         User user = null;
         try{
