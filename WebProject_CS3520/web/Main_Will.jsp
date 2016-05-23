@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!--This is extremely important!!!!!!-->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,8 +25,7 @@
                 <input type="text" name="username" required><br>
                 <label>Message:</label><br>
                 <input type="text" name="message" required><br>
-                <input type="submit" value="Save">
-                <input type="submit" value="Send"><p><i>Message: ${message}</i><p>
+                <input type="submit" value="Send"><p><i>${message}</i><p>
             </form>
         </div>
         
@@ -32,10 +33,19 @@
             
         <div>
             <h2>Your Inbox:</h2>
-            <table>
-                <tr><th>From<th><th>Time</th><th>Message</th></tr>
-                <c:forEach items="${message.message}" var="email">
-                   <tr><td><c:out value="${message}"/><td><tr>
+            <button>Delete the last message</button>
+            <table border="1" style="margin:0.5em; width:100%">
+                <tr>
+                    <th style="width: 10em">From</th>
+                    <th style="width: 8em">Time</th>
+                    <th>Message</th>
+                </tr>
+                <c:forEach items="${user.message}" var="m">
+                   <tr>
+                       <td><c:out value="${m.fromuser}"/></td>
+                       <td><c:out value="${m.year}-${m.month}-${m.day} ${m.hour}:${m.minute}:${m.second}"/></td>
+                       <td><c:out value="${m.message}"/></td>
+                    </tr>
                 </c:forEach>
             </table>
         </div>

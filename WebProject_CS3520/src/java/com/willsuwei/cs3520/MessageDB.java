@@ -76,7 +76,7 @@ public class MessageDB {
             Connection connection = MyDatabase.getConnection();
         
             PreparedStatement ps = null;
-            String query = "SELECT * FROM cs3520.user WHERE touser = ?";
+            String query = "SELECT * FROM cs3520.message WHERE touser = ?";
             ps = connection.prepareStatement(query);
             ps.setString(1, username);
             ResultSet rs = ps.executeQuery();
