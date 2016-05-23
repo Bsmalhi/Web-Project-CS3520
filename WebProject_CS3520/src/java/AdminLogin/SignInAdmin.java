@@ -7,6 +7,7 @@ package AdminLogin;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author baljotmalhi
  */
+@WebServlet(name = "SignInAdmin", urlPatterns = {"/SignInAdmin"})
 public class SignInAdmin extends HttpServlet {
 
     /**
@@ -30,27 +32,16 @@ public class SignInAdmin extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = "/Admin.jsp";
-        String method = request.getParameter("action");
-       // HttpSession session = request.getSession();
-       if(method.equals("add")){
-           
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        //User user = UserDB.find(username);
-        String pass = "Admin123", user = "Admin";
-            if (username == user && password == pass){
-                url = "/AdminMain.jsp";
-                System.out.println("Sign up successfully");           
-               // session.setAttribute("user", username);
-            }else{
-                System.err.println("Username password did not match");
-                url = "/Admin.jsp";
-            }
-       }else{
-           System.out.println("Did Nothing");
-       }
+        String user = "Admin", pass = "Admin123";
+        if (username.equals(user) && password.equals(pass)){
+            url = "/AdminMain.jsp";
+        }else{
+            System.err.println("Username password did not match");
+            url = "/Admin.jsp";
+        }
         this.getServletContext().getRequestDispatcher(url).forward(request, response);
-        
     }
     
 
