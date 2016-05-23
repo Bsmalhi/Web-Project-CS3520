@@ -6,8 +6,8 @@
 package com.willsuwei.cs3520;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Calendar;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,14 +32,47 @@ public class Chat extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = "/Main_Will.jsp";
+        String url = "/Chat.jsp";
         
         User user = (User) request.getSession().getAttribute("user");
-        user.setMessage(MessageDB.find(user.getUsername()));
+        
+        String action = request.getParameter("action");
+        if (action!=null){
+            if (action.equals("SEND")){
+                String username = request.getParameter("username");
+                String message = request.getParameter("message");
+                Calendar calendar = Calendar.getInstance();
+                if (UserDB.find(username)!=null){
+                    MessageDB.add(new Message(
+                            1,
+                            user.getUsername(),
+                            username,
+                            message,
+                            Integer.toString(calendar.get(Calendar.YEAR)),
+                            Integer.toString(calendar.get(Calendar.MONTH)),
+                            Integer.toString(calendar.get(Calendar.DAY_OF_MONTH)),
+                            Integer.toString(calendar.get(Calendar.HOUR)),
+                            Integer.toString(calendar.get(Calendar.MINUTE)),
+                            Integer.toString(calendar.get(Calendar.SECOND))
+                    ));
+                } else{
+                    request.setAttribute("message", "User not found");
+                }
+            } else if (action.equals("DELETE")){
+                if (user.getMessage().size() > 0){
+                    int id = Integer.parseInt(request.getParameter("id"));
+                    MessageDB.deleteMessageByID(user.getMessage().get(id-1).getId());
+                }
+            }
+        }
+        
+        ArrayList<Message> message = MessageDB.find(user.getUsername());
+        for (int i=0; i<message.size(); i++){
+            message.get(i).setNumber(i+1);
+        }
+        user.setMessage(message);
         request.getSession().setAttribute("user", user);
-        
-        user = (User) request.getSession().getAttribute("user");
-        
+                
         this.getServletContext().getRequestDispatcher(url).forward(request, response);
     }
 
