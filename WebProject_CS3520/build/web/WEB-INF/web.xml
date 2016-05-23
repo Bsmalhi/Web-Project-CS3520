@@ -4,9 +4,17 @@
         <servlet-name>LoginAuth</servlet-name>
         <servlet-class>com.willsuwei.cs3520.SignIn</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SignInAdmin</servlet-name>
+        <servlet-class>AdminLogin.SignInAdmin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginAuth</servlet-name>
         <url-pattern>/LoginAuth</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SignInAdmin</servlet-name>
+        <url-pattern>/SignInAdmin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
