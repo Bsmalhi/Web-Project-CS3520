@@ -102,6 +102,8 @@
                             <button type="submit" class="btn btn-success">Login</button>
                             <p class="right"><b>Not registered? <a href ="Register.jsp">Register here</a></b> Or <b>Admin Login?<a href ="Admin.jsp">Admin SignIn</a></b></p>
                         </form>
+                    <p><i>${message}</i><p>
+                    <p
                 </div>
             </div>
         </div>
