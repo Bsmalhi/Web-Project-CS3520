@@ -15,8 +15,13 @@
     </head>
     <body>
         <h1>Snap Chat</h1>
-        <h3>Current User: ${user.username}</h3>
-        <br>
+        <h3>Username: ${user.username}</h3>
+        <h3>Email: ${user.email}</h3>
+        <h3>First Name: ${user.firstname}</h3>
+        <h3>Last Name: ${user.lastname}</h3>
+        <a href ="EditUser.jsp">Edit My Info</a>
+        
+        <br><br>
         
         <div>
             <h2>Send Mail</h2>
@@ -34,18 +39,21 @@
             
         <div>
             <h2>Your Inbox:</h2>
+            <!--
             <form action="Chat" method="post">
                 <input type="hidden" name="action" value="DELETE">
                 <label>Enter the number of message you want to delete:</label>
                 <input type=number name="id" required>
                 <input type="submit" value="Delete">
             </form>
+            -->
             <table border="2" style="margin:0.5em; width:100%">
                 <tr>
                     <th style="width: 3em"></th>
                     <th style="width: 10em">From</th>
                     <th style="width: 8em">Time</th>
-                    <th>Message</th>
+                    <th style="width: 10em">Message</th>
+                    <th style="width: 4em">Action</th>
                 </tr>
                 <c:forEach items="${user.message}" var="m">
                    <tr>
@@ -53,6 +61,13 @@
                        <td><c:out value="${m.fromuser}"/></td>
                        <td><c:out value="${m.year}-${m.month}-${m.day} ${m.hour}:${m.minute}:${m.second}"/></td>
                        <td><c:out value="${m.message}"/></td>
+                       <td>
+                            <form action="Chat" method="post">
+                                <input type="hidden" name="action" value="DELETE">
+                                <input type="hidden" name="id" value="${m.number}">
+                                <input type="submit" value="Delete">
+                            </form>
+                        </td>
                     </tr>
                 </c:forEach>
             </table>

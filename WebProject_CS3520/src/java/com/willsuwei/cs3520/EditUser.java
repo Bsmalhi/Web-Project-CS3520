@@ -6,20 +6,20 @@
 package com.willsuwei.cs3520;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Calendar;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Will
  */
-@WebServlet(name = "Chat", urlPatterns = {"/Chat"})
-public class Chat extends HttpServlet {
+@WebServlet(name = "EditUser", urlPatterns = {"/EditUser"})
+public class EditUser extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,48 +33,19 @@ public class Chat extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = "/Chat.jsp";
-        
-        User user = (User) request.getSession().getAttribute("user");
-        
-        String action = request.getParameter("action");
-        if (action!=null){
-            if (action.equals("SEND")){
-                String username = request.getParameter("username");
-                String message = request.getParameter("message");
-                Calendar calendar = Calendar.getInstance();
-                if (UserDB.find(username)!=null){
-                    MessageDB.add(new Message(
-                            1,
-                            user.getUsername(),
-                            username,
-                            message,
-                            Integer.toString(calendar.get(Calendar.YEAR)),
-                            Integer.toString(calendar.get(Calendar.MONTH) + 1),
-                            Integer.toString(calendar.get(Calendar.DAY_OF_MONTH)),
-                            Integer.toString(calendar.get(Calendar.HOUR_OF_DAY)),
-                            Integer.toString(calendar.get(Calendar.MINUTE)),
-                            Integer.toString(calendar.get(Calendar.SECOND))
-                    ));
-                } else{
-                    request.setAttribute("message", "User not found");
-                }
-            } else if (action.equals("DELETE")){
-                /*if (user.getMessage().size() > 0){
-                    int id = Integer.parseInt(request.getParameter("id"));
-                    MessageDB.deleteMessageByID(user.getMessage().get(id-1).getId());
-                }*/
-                int id = Integer.parseInt(request.getParameter("id"));
-                MessageDB.deleteMessageByID(user.getMessage().get(id-1).getId());
-            }
-        }
-        
-        ArrayList<Message> message = MessageDB.find(user.getUsername());
-        for (int i=0; i<message.size(); i++){
-            message.get(i).setNumber(i+1);
-        }
-        user.setMessage(message);
-        request.getSession().setAttribute("user", user);
-                
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String firstname = request.getParameter("firstname");
+        String lastname = request.getParameter("lastname");
+        String email = request.getParameter("email");
+        String year = request.getParameter("year");
+        String month = request.getParameter("month");
+        String day = request.getParameter("day");
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
+        User newUser = new User(user.getUsername(), password, email, firstname, lastname, year, month, day);
+        UserDB.update(newUser);
+        session.setAttribute("user", newUser);
         this.getServletContext().getRequestDispatcher(url).forward(request, response);
     }
 
