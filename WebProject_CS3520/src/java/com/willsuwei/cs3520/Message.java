@@ -1,7 +1,6 @@
 package com.willsuwei.cs3520;
 
 
-import java.util.Calendar;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -14,21 +13,34 @@ import java.util.Calendar;
  * @author Will
  */
 public class Message {
-    private String title, message;
-    private Calendar calender;
+    private String fromuser, touser, message, year, month, day, hour, minute, second;
 
-    public Message(String title, String message, Calendar calender) {
-        this.title = title;
+    public Message(String fromuser, String touser, String message, String year, String month, String day, String hour, String minute, String second) {
+        this.fromuser = fromuser;
+        this.touser = touser;
         this.message = message;
-        this.calender = calender;
+        this.year = year;
+        this.month = month;
+        this.day = day;
+        this.hour = hour;
+        this.minute = minute;
+        this.second = second;
     }
 
-    public String getTitle() {
-        return title;
+    public String getFromuser() {
+        return fromuser;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setFromuser(String fromuser) {
+        this.fromuser = fromuser;
+    }
+
+    public String getTouser() {
+        return touser;
+    }
+
+    public void setTouser(String touser) {
+        this.touser = touser;
     }
 
     public String getMessage() {
@@ -39,12 +51,52 @@ public class Message {
         this.message = message;
     }
 
-    public Calendar getCalender() {
-        return calender;
+    public String getYear() {
+        return year;
     }
 
-    public void setCalender(Calendar calender) {
-        this.calender = calender;
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public String getMonth() {
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    public String getDay() {
+        return day;
+    }
+
+    public void setDay(String day) {
+        this.day = day;
+    }
+
+    public String getHour() {
+        return hour;
+    }
+
+    public void setHour(String hour) {
+        this.hour = hour;
+    }
+
+    public String getMinute() {
+        return minute;
+    }
+
+    public void setMinute(String minute) {
+        this.minute = minute;
+    }
+
+    public String getSecond() {
+        return second;
+    }
+
+    public void setSecond(String second) {
+        this.second = second;
     }
     
 }

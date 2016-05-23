@@ -20,9 +20,14 @@ public class MyDatabase {
     private static String username = "cs3520";
     private static String password = "cs3520";
     private static Connection connection;
+
+    public static Connection getConnection() {
+        return connection;
+    }
     
     public static void InitiallizeConnection(){
         try{
+            Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(dbURL, username, password);
         } catch(Exception e){
             System.out.println(e);

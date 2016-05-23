@@ -16,18 +16,29 @@ import java.util.Calendar;
  * @author Will
  */
 public class User implements Serializable{
-    private String username, password, email, firstname, lastname;
-    private Calendar dob;
+    private String username, password, email, firstname, lastname, year, month, day;
     private ArrayList<Message> message;
-
-    public User(String username, String password, String email, String firstname, String lastname, Calendar dob) {
+    
+    public User(String username, String password, String email, String firstname, String lastname, String year, String month, String day) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.firstname = firstname;
         this.lastname = lastname;
-        this.dob = dob;
+        this.year = year;
+        this.month = month;
+        this.day = day;
+        message = null;
     }
+
+    public ArrayList<Message> getMessage() {
+        return message;
+    }
+
+    public void setMessage(ArrayList<Message> message) {
+        this.message = message;
+    }
+
 
     public String getUsername() {
         return username;
@@ -69,20 +80,27 @@ public class User implements Serializable{
         this.lastname = lastname;
     }
 
-    public Calendar getDob() {
-        return dob;
+    public String getYear() {
+        return year;
     }
 
-    public void setDob(Calendar dob) {
-        this.dob = dob;
+    public void setYear(String year) {
+        this.year = year;
     }
 
-    public ArrayList<Message> getMessage() {
-        return message;
+    public String getMonth() {
+        return month;
     }
 
-    public void setMessage(ArrayList<Message> message) {
-        this.message = message;
+    public void setMonth(String month) {
+        this.month = month;
     }
-    
+
+    public String getDay() {
+        return day;
+    }
+
+    public void setDay(String day) {
+        this.day = day;
+    }
 }

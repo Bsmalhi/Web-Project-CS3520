@@ -16,19 +16,19 @@ import javax.sql.DataSource;
  */
 public class ConnectionPool {
     private static ConnectionPool pool = null;
-    //private static DataSource dataSource = null;
+    private static DataSource dataSource = null;
     
     private static String dbURL = "jdbc:mysql://willsuwei.com:3306";
     private static String username = "cs3520";
     private static String password = "cs3520";
     
     private ConnectionPool(){
-        /*try{
+        try{
             InitialContext ic = new InitialContext();
             dataSource = (DataSource) ic.lookup("java:/comp/env/jdbc/murach");
         } catch (NamingException e){
             System.out.println(e);
-        }*/
+        }
     }
     
     public static synchronized ConnectionPool getInstance(){
@@ -41,8 +41,9 @@ public class ConnectionPool {
     public Connection getConnection(){
         try{
             //return dataSource.getConnection();
+            Class.forName("com.mysql.jdbc.Driver");
             return DriverManager.getConnection(dbURL, username, password);
-        } catch (SQLException e){
+        } catch (Exception e){
             System.out.println(e);
             return null;
         }

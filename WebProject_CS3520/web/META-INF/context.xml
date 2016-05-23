@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context path="/WebProject_CS3520">
-    <!--
     <Resource name="jdbc/murach" auth="Container"
         driverClassName="com.mysql.jdbc.Driver"
         url="jdbc:mysql://willsuwei.com:3306/murach?autoReconnection=true"
@@ -9,5 +8,4 @@
         logAbandoned="true" removeAbandoned="true"
         removeAbandonedTimeout="60" type="javax.sql.DataSource"
     />
-    -->
 </Context>
