@@ -13,9 +13,11 @@ package com.willsuwei.cs3520;
  * @author Will
  */
 public class Message {
+    private int id, number;
     private String fromuser, touser, message, year, month, day, hour, minute, second;
-
-    public Message(String fromuser, String touser, String message, String year, String month, String day, String hour, String minute, String second) {
+        
+    public Message(int id, String fromuser, String touser, String message, String year, String month, String day, String hour, String minute, String second) {
+        this.id = id;
         this.fromuser = fromuser;
         this.touser = touser;
         this.message = message;
@@ -25,6 +27,22 @@ public class Message {
         this.hour = hour;
         this.minute = minute;
         this.second = second;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFromuser() {

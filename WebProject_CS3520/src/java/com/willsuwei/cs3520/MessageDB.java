@@ -76,12 +76,13 @@ public class MessageDB {
             Connection connection = MyDatabase.getConnection();
         
             PreparedStatement ps = null;
-            String query = "SELECT * FROM cs3520.message WHERE touser = ?";
+            String query = "SELECT * FROM cs3520.message WHERE touser = ? ORDER BY id DESC";
             ps = connection.prepareStatement(query);
             ps.setString(1, username);
             ResultSet rs = ps.executeQuery();
             while (rs.next()){
                 message.add(new Message(
+                        rs.getInt("id"),
                         rs.getString("fromuser"),
                         rs.getString("touser"),
                         rs.getString("message"),
@@ -102,6 +103,28 @@ public class MessageDB {
         
         return message;
     }
-        //message = new ArrayList();
-        //message.add(new Message("Username", "Message", "Year", "Month", "Day", "Hour", "Minute", "Second"));
+    
+    
+    public static void deleteMessageByID(int id){        
+        try{
+            MyDatabase.InitiallizeConnection();
+            Connection connection = MyDatabase.getConnection();
+        
+            PreparedStatement ps = null;
+            String query = "DELETE FROM cs3520.message WHERE id = ? ";
+            ps = connection.prepareStatement(query);
+            //ps.setString(1, Integer.toString(id));
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        } catch (Exception e){
+            System.out.println(e);
+            e.printStackTrace();
+        } finally{
+            MyDatabase.CloseConnection();
+        }
+    }
+    
+    public static void main(String[] str){
+        add(new Message(1, "asdf", "asdf", "Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message ", "1990", "01", "01", "01", "01", "01"));
+    }
 }
