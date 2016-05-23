@@ -68,7 +68,7 @@
         <div class="container" id="topContainer" >
             <div class="col-lg-6 col-lg-offset-3" id="topRow">
                 <h1 class="marginTop">Login Information</h1>
-                <form action="SignIn" method="post" value="add" class="navbar-form"/>
+                <form action="SignInAdmin" method="post" class="navbar-form"/>
                 <div class="form-group">
                     <label> Username</label>
                     <input type="text" name="username" class="form-control"/><br>
