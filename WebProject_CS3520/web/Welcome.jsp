@@ -68,6 +68,11 @@
     .centerTitle{
         
     }
+    #errorMessage{
+       margin: auto;
+       margin-left: 400px;
+       
+    }
     </style>
 
 </head>
@@ -89,6 +94,7 @@
                             <li class="active"><a href="#home">Home</a></li>
                             <li><a href="About.jsp">About</a></li>
                             <li><a href="DownloadApp.jsp">Download App</a></li>
+                            <li id="errorMessage"><i>${message}</i></li>             
                         </ul>                                                                
                     </div>
                 <div class="up">
@@ -102,8 +108,7 @@
                             <button type="submit" class="btn btn-success">Login</button>
                             <p class="right"><b>Not registered? <a href ="Register.jsp">Register here</a></b> Or <b>Admin Login?<a href ="Admin.jsp">Admin SignIn</a></b></p>
                         </form>
-                    <p><i>${message}</i><p>
-                    <p
+                    
                 </div>
             </div>
         </div>
