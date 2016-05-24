@@ -7,6 +7,8 @@ package com.willsuwei.cs3520;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,8 +33,21 @@ public class SendEmail extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String url = "/Welcome.jsp";
         String emailMessage = request.getParameter("emailMessage");
         
+        ArrayList<String> emailList = UserDB.getEmailList();
+        if (emailList != null){
+            for (String email:emailList){
+                sendEmail(email, emailMessage);
+            }
+        }
+        
+        this.getServletContext().getRequestDispatcher(url).forward(request, response);
+    }
+    
+    public static void sendEmail(String email, String message){
+        System.out.println("Email: " + email + "---" + "Message: " + message);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

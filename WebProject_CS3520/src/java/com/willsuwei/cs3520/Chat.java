@@ -42,7 +42,8 @@ public class Chat extends HttpServlet {
                 String username = request.getParameter("username");
                 String message = request.getParameter("message");
                 Calendar calendar = Calendar.getInstance();
-                if (UserDB.find(username)!=null){
+                User toUser = UserDB.find(username);
+                if (toUser != null){
                     MessageDB.add(new Message(
                             1,
                             user.getUsername(),
@@ -55,6 +56,11 @@ public class Chat extends HttpServlet {
                             Integer.toString(calendar.get(Calendar.MINUTE)),
                             Integer.toString(calendar.get(Calendar.SECOND))
                     ));
+                    SendEmail.sendEmail(toUser.getEmail(),
+                            "Your friend " + user.getUsername() + "send you a Snap Chat message. "+ "Here is the detail:\n"+
+                            message +
+                            "\nPlease go to Snap Chat for detail. Thank you."
+                    );
                 } else{
                     request.setAttribute("message", "User not found");
                 }
