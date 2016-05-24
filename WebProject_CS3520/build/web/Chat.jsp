@@ -5,49 +5,122 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!--This is extremely important!!!!!!-->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Chat</title>
-    </head>
-    <body>
-        <h1>Snap Chat</h1>
-        <h3>Username: ${user.username}</h3>
-        <h3>Email: ${user.email}</h3>
-        <h3>First Name: ${user.firstname}</h3>
-        <h3>Last Name: ${user.lastname}</h3>
-        <a href ="EditUser.jsp">Edit My Info</a>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Snap Chat</title>
+       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         
-        <br><br>
+    <style type="text/css">
+    .marginTop{
+        margin-top: 15px;
+        margin-bottom: 15px;
+        width: 100vh;
+    }
+    #topRow{
+        margin-top: 100px;
+        text-align: center;
+        width: 100vh;
+    }
+    .footer{
+        margin-top: 20%;
+        text-align: center;
+    }
+    .navbar-brand{
+        font-size: 1.8em;
+    }    
+    #topContainer{
+        background-image: url("Include/Images/Clouds.jpeg");
+        width: 100%;
+        height: 100vh;
+    }
+    #textArea{
+        width: 400px;
+        height: 200px;
+    }
+    .w{
+        width: 100%;
+        border: solid black;
+    }
+    .right{
+        margin-left: 500px;
+    }
+    #background{
         
-        <div>
-            <h2>Send Mail</h2>
-            <form action="Chat" method="post">
-                <input type="hidden" name="action" value="SEND">
-                <label>To:</label><br>
-                <input type="text" name="username" required><br>
-                <label>Message:</label><br>
-                <input type="text" name="message" required><br>
-                <input type="submit" value="Send"><p><i>${message}</i><p>
-            </form>
+    }
+    .border{
+        width: 100%;
+        border: solid black .2em;
+        border-radius: 7.5em 5em;
+    }
+    #textArea{
+        width: 400px;
+        height: 200px;
+    }
+    </style>
+  </head>
+  <body id="background">
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                           
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        
+                    </button>
+                       <a class="navbar-brand">SnapMail</a> 
+                </div>
+                <div class="collapse navbar-collapse" >
+                        <ul class="nav navbar-nav">
+                            <li><a href="Chat.jsp">Home</a></li>
+                            <li><a href="About.jsp">About</a></li>
+                            <li><a href="DownloadApp.jsp">Download App</a></li>
+                            <li class="active"><a href="#UserMain">Home Page</a></li>
+                            <li class="right"><a href="signOut">Sign Out</a></li>
+                        </ul>                                                                
+                </div>
+            </div>
+       </div>
+        <div class="container" id="topContainer" >
+            <div class="col-lg-6 col-lg-offset-3" id="topRow">
+                <h1 class="marginTop"><%@ include file="Header.jsp" %></h1>
+             
+                <h3> ${user.username}'s <a href ="EditUser.jsp" styele ="text-decoration: none;"> Account Settings</a></h3>
+
+                
+                <br><br>
+
+                <div>
+                    <h2>Send Message</h2>
+                    <form action="Chat" method="post">
+                        <input type="hidden" name="action" value="SEND">
+                        <label>To:</label><br>
+                        <input type="text" name="username" required><br>
+                        <label>Message:</label><br>
+                        <input id="textArea" type="text" name="message" required><br>
+                        <input type="submit" value="Send"><p><i>${message}</i><p>
+                    </form>
+                </div>
+            </div>
         </div>
         
         <br>
             
-        <div>
-            <h2>Your Inbox:</h2>
-            <!--
-            <form action="Chat" method="post">
-                <input type="hidden" name="action" value="DELETE">
-                <label>Enter the number of message you want to delete:</label>
-                <input type=number name="id" required>
-                <input type="submit" value="Delete">
-            </form>
-            -->
-            <table border="2" style="margin:0.5em; width:100%">
+        <div class="container">
+            <div class="col-lg-8 col-lg-offset-3">
+            <h3 class="navbar-left"> ${ user.username}, Inbox</h3>
+           
+            <table class="border" border="1" style="margin:0.5em; width:100%" >
                 <tr>
                     <th style="width: 3em"></th>
                     <th style="width: 10em">From</th>
@@ -67,10 +140,21 @@
                                 <input type="hidden" name="id" value="${m.number}">
                                 <input type="submit" value="Delete">
                             </form>
-                        </td>
+                       </td>
                     </tr>
                 </c:forEach>
             </table>
         </div>
+            <div class="footer">
+            <%@ include file="Footer.jsp" %>
+            </div>
     </body>
 </html>
+ <!--
+            <form action="Chat" method="post">
+                <input type="hidden" name="action" value="DELETE">
+                <label>Enter the number of message you want to delete:</label>
+                <input type=number name="id" required>
+                <input type="submit" value="Delete">
+            </form>
+            -->

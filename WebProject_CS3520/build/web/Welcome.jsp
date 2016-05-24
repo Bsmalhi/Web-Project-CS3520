@@ -69,7 +69,7 @@
         
     }
     #errorMessage{
-       margin: auto;
+       margin-top: 30px;
        margin-left: 400px;
        
     }
@@ -87,7 +87,7 @@
                         <span class="icon-bar"></span>
                         
                        </button>
-                       <a class="navbar-brand">Snap Chat</a> 
+                       <a class="navbar-brand">SnapMail</a> 
                  </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
