@@ -46,7 +46,7 @@ public class UserDB {
         try{
             MyDatabase.InitiallizeConnection();
             Connection connection = MyDatabase.getConnection();
-        
+            
             PreparedStatement ps = null;
             String query = "INSERT INTO cs3520.user (username, password, email, firstname, lastname, year, month, day) " + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             
