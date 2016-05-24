@@ -17,7 +17,7 @@ import java.sql.Statement;
  * @author Will
  */
 public class MyDatabase {
-    private static String dbURL = "jdbc:mysql://willsuwei.com:3306";
+    private static String dbURL = "jdbc:mysql://localhost:3306";
     private static String username = "cs3520";
     private static String password = "cs3520";
     private static Connection connection;
@@ -60,8 +60,7 @@ public class MyDatabase {
                     "`month` VARCHAR(45) NULL,"+
                     "`day` VARCHAR(45) NULL,"+
                     "PRIMARY KEY (`id`),"+
-                    "UNIQUE INDEX `id_UNIQUE` (`id` ASC),"+
-                    "UNIQUE INDEX `username_UNIQUE` (`username` ASC));"
+                    "UNIQUE INDEX `id_UNIQUE` (`id` ASC));"
             );
         } catch(Exception e){
             System.out.println(e);

@@ -75,10 +75,10 @@
                             <label> Last Name</label>
                             <input type="text" name="lastname" class="form-group"/><br>
                             <label> Email  </label>
-                            <input class="padd" type="text" name="email" class="form-group"/><br>
-                            
+                            <input class="padd" type="email" name="email" class="form-group"/><br>
                             <label></label>
-                            <input  type="submit" value="Create" class="btn btn-success"/>   
+                            <input  type="submit" value="Create" class="btn btn-success"/>
+                            <i>${message}</i>
                         </form>
                         
                         <div class="footer">
