@@ -57,9 +57,9 @@ public class Chat extends HttpServlet {
                             Integer.toString(calendar.get(Calendar.SECOND))
                     ));
                     SendEmail.sendEmail(toUser.getEmail(),
-                            "Your friend " + user.getUsername() + "send you a Snap Chat message. "+ "Here is the detail:\n"+
+                            "Your friend " + user.getUsername() + " just send you a Snap Chat message. "+ "Here is the detail:\n"+
                             message +
-                            "\nPlease go to Snap Chat for detail. Thank you."
+                            "\nPlease check your Snap Chat account for more detail. Thank you."
                     );
                 } else{
                     request.setAttribute("message", "User not found");
