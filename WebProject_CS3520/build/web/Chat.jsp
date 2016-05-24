@@ -78,7 +78,7 @@
                         <span class="icon-bar"></span>
                         
                     </button>
-                       <a class="navbar-brand">Snap Chat</a> 
+                       <a class="navbar-brand">SnapMail</a> 
                 </div>
                 <div class="collapse navbar-collapse" >
                         <ul class="nav navbar-nav">
@@ -95,7 +95,7 @@
             <div class="col-lg-6 col-lg-offset-3" id="topRow">
                 <h1 class="marginTop"><%@ include file="Header.jsp" %></h1>
              
-                <h3>Username: ${user.username }<a href ="EditUser.jsp"> Update Info</a></h3>
+                <h3> ${user.username}'s <a href ="EditUser.jsp" styele ="text-decoration: none;"> Account Settings</a></h3>
 
                 
                 <br><br>
@@ -116,7 +116,8 @@
         
         <br>
             
-        <div>
+        <div class="container">
+            <div class="col-lg-8 col-lg-offset-3">
             <h3 class="navbar-left"> ${ user.username}, Inbox</h3>
            
             <table class="border" border="1" style="margin:0.5em; width:100%" >
