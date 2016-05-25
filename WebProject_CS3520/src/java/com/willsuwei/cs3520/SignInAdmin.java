@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AdminLogin;
+package com.willsuwei.cs3520;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;

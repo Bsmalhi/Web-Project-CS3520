@@ -6,7 +6,7 @@
     </servlet>
     <servlet>
         <servlet-name>SignInAdmin</servlet-name>
-        <servlet-class>AdminLogin.SignInAdmin</servlet-class>
+        <servlet-class>com.willsuwei.cs3520.SignInAdmin</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginAuth</servlet-name>
