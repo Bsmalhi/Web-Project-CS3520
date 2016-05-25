@@ -39,6 +39,7 @@ public class SignInAdmin extends HttpServlet {
             url = "/AdminMain.jsp";
         }else{
             System.err.println("Username password did not match");
+            request.setAttribute("message", "Please enter correct Username and Password");
             url = "/Admin.jsp";
         }
         this.getServletContext().getRequestDispatcher(url).forward(request, response);

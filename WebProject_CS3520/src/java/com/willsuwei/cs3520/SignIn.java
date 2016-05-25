@@ -45,7 +45,7 @@ public class SignIn extends HttpServlet {
         }else{
             System.err.println("Username password did not match");
             url = "/Welcome.jsp";
-            request.setAttribute("message", "Please enter correct Username or Password");
+            request.setAttribute("message", "Please enter correct Username and Password");
         }
         this.getServletContext().getRequestDispatcher(url).forward(request, response);
     }
