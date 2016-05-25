@@ -28,13 +28,27 @@
         margin-top: 50px;
         text-align: center;
     }
+    #topContainer{
+        background-image: url("Include/Images/fall.jpeg");
+        width: 100%;
+        height: 100vh;
+    }
     .marginTop{
                 margin-top: 50px;
                 margin-bottom: 50px;
     }          
     .footer{
-        margin-top: 60%;
+        margin-top: 40%;
+        color: white;
     }
+    p{
+        font-size: 1.2em;
+        color: white;
+    }
+    h1{
+        color: white;
+    }
+ 
     </style>
     
     </head>
@@ -61,9 +75,14 @@
                 </div>
             </div>
         </div>
-                <div class="container contentContainer">
+                <div class="container contentContainer" id="topContainer">
                     <div class="col-md-6 col-md-offset-3" id="topRow">
                         <h1 class="marginTop"> About Creators</h1>
+                        <p>Thanks for visiting our Web Application. </p>
+                        <p>This Site is a Collective effort of 2 Computer Science Students at CSUEB </p>
+                        <p>Wei Su and Baljot Malhi both worked out to make SnapMail project a reality. <p>
+                        <p>We would like to thank our Professor for guiding us through the making of this SnapMail Web App</p>
+                        <p>We would like to work further to develop and make SnapMail one of the best Web Application.</p>
                         
                         <div class="footer">
                         <%@ include file="Footer.jsp" %>

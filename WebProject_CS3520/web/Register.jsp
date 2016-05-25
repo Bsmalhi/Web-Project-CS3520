@@ -30,6 +30,7 @@
             }
             h1{
                 font-size: 3em;
+                font-style: oblique;
             }
             .padd{
                 margin-left: 30px;
@@ -44,6 +45,10 @@
             }
             .footer{
                 margin-top: 22%;
+            }
+            label{
+                font-size: 1.1em;
+                font-style: italic;
             }
         </style>
     </head>

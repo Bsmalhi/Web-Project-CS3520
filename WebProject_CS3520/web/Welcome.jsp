@@ -73,6 +73,13 @@
        margin-left: 400px;
        
     }
+    .row a{
+        text-decoration: none;
+        color: #4C4C4C;
+    }
+    .col-md-4 marginTop a{
+        text-decoration: none;
+    }
     </style>
 
 </head>
@@ -147,21 +154,21 @@
              <div class="row marginBottom">
 
                 <div class="col-md-4 marginTop">
-                    <h3><span class="glyphicon glyphicon-envelope">Access Emails</h3>
-                    <p>A brief description of the one of the best feature of ths extraordinary app you made. Maybe little more text can help to provide more information on the features of my amazing app today.</p>
+                    <h3><span class="glyphicon glyphicon-envelope">Access Messages</h3>
+                    <p>SnapMail is a great app to stay in touch with your close friends. SnapMail helps you access text messages from your friends directly to your Account so you can read it whenever you want without any disruption.</p>
                     <button class="btn btn-success marginTop"> Sign up!</button>
                 </div>
                  
                 <div class="col-md-4 marginTop">
-                    <h3><span class="glyphicon glyphicon-pencil">Send Emails</h3>
-                    <p>A brief description of the one of the best feature of ths extraordinary app you made. Maybe little more text can help to provide more information on the features of my amazing app today.</p>
+                    <h3><span class="glyphicon glyphicon-pencil">Send Messages</h3>
+                    <p>SnapMail allows you to send quick mail to your friends to keep them updated about any important information. You can send messages quickly to any user in the SnapMail by logging into you account. Also the message can be accessed by users account and email.</p>
                     <button class="btn btn-success marginTop"> Sign up!</button>
                 </div>
 
                 <div class="col-md-4 marginTop">
                     <h3><span class="glyphicon glyphicon-tasks">Subscribe for Newsletter</h3>
-                    <p>A brief description of the one of the best feature of ths extraordinary app you made. Maybe little more text can help to provide more information on the features of my amazing app today.</p>
-                    <button class="btn btn-success marginTop"> Sign up!</button>
+                    <p>SnapMail lets you signUp your email for subscribing to our daily Newsletter which is a good way to be updated about the news around the corner.</p>
+                    <button class="btn btn-success marginTop"><a href="Welcome.jsp" style="color: white"> Sign up!</a></button>
                 </div>
 
              </div>
@@ -172,7 +179,7 @@
              
              <div class="row">
                  
-                 <h1 class="center title"><a href="DownloadApp.jsp" style="text-decoration:none">Download The App! </a></h1>
+                 <h1 class="center title"><a href="DownloadApp.jsp" >Download The App! </a></h1>
              <p class="lead center"> </p>
              <p class="center"><img src="Include/Images/appleLogo.png" class="appImage"/> </p>
              <p class="center"><img src=""></p>
