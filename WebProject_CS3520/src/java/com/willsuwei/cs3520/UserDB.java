@@ -3,6 +3,7 @@ package com.willsuwei.cs3520;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import javax.mail.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -136,8 +137,27 @@ public class UserDB {
         return user;
     }
     
-    public static void main(String[] args){
-        User user = new User("username", "password", "email", "firstname", "lastname", "year", "month", "day");
-        add(user);
+    
+    public static ArrayList<String> getEmailList(){
+        ArrayList<String> emailList = new ArrayList();
+        try{
+            MyDatabase.InitiallizeConnection();
+            Connection connection = MyDatabase.getConnection();
+        
+            PreparedStatement ps = null;
+            String query = "SELECT email FROM cs3520.user";
+            ps = connection.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                emailList.add(rs.getString("email"));
+            }
+        } catch (Exception e){
+            System.out.println(e);
+            e.printStackTrace();
+        } finally{
+            MyDatabase.CloseConnection();
+        }
+        
+        return emailList;
     }
 }

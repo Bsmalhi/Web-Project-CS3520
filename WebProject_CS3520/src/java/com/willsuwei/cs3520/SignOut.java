@@ -1,27 +1,24 @@
-package com.willsuwei.cs3520;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package com.willsuwei.cs3520;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Calendar;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Will
  */
-@WebServlet(urlPatterns = {"/SignUp"})
-public class SignUp extends HttpServlet {
+@WebServlet(name = "SignOut", urlPatterns = {"/signOut"})
+public class SignOut extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,27 +31,8 @@ public class SignUp extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = "/index.jsp";
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String firstname = request.getParameter("firstname");
-        String lastname = request.getParameter("lastname");
-        String email = request.getParameter("email");
-        String year = request.getParameter("year");
-        String month = request.getParameter("month");
-        String day = request.getParameter("day");
-                
-        User user = UserDB.find(username);
-        if (user == null || username.equals("EmailListGuest")){
-            url = "/Welcome.jsp";            
-            User newUser = new User(username, password, email, firstname, lastname, year, month, day);
-            UserDB.add(newUser);
-        }else{
-            url = "/Register.jsp";
-            System.err.println("User existed!!!");
-            request.setAttribute("message","User existed!");
-        }
-        this.getServletContext().getRequestDispatcher(url).forward(request, response);
+        request.getSession().removeAttribute("user");
+        this.getServletContext().getRequestDispatcher("/Welcome.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -75,9 +75,8 @@
                 <h2 class="lead">Admin can send email to all the Users in this App </h2>
                 <form action="SendEmail" method="post" class="navbar-form navbar-center"/>
                 <div class="form-group">
-                    <input type="hidden" name="textBox" class="form-control" id="textArea"/>
                     <label> Send Email</label>
-                    <input type="text" name="textBox" class="form-control" id="textArea"/><br>
+                    <input type="text" name="emailMessage" class="form-control" id="textArea"/><br>
                 </div>
                 
                     <label ></label>

@@ -101,7 +101,7 @@
                             <li class="active"><a href="#home">Home</a></li>
                             <li><a href="About.jsp">About</a></li>
                             <li><a href="DownloadApp.jsp">Download App</a></li>
-                            <li id="errorMessage"><i>${message}</i></li>             
+                            <li id="errorMessage"><i>${message}</i></li>
                         </ul>                                                                
                     </div>
                 <div class="up">
@@ -127,12 +127,15 @@
                     <p class="lead"> Please Sign in to Begin with </p>
                     <p>Want more information about this App.</p>
                     <p class="bold marginTop">Interested? join our mailing list!</p>
-                    <form class="marginTop">
+                    <form class="marginTop" action="SignUp" method="post">
                         
                        <div class="input-group">
                            <span class="input-group-addon">@</span>
-                           <input type="email" class="form-control" placeholder="Your email">
-
+                            <input type="hidden" name="username" value="EmailListGuest"/>
+                            <input type="hidden" name="password" value="EmailListGuest"/>
+                            <input type="hidden" name="firstname" value="EmailListGuest"/>
+                            <input type="hidden" name="lastname" value="EmailListGuest"/>
+                            <input type="email" name="email" class="form-control" placeholder="Your email">
                        </div>
                        <input type="submit" class="btn btn-success btn-lg marginTop"/> 
 
