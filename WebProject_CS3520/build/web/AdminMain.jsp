@@ -29,19 +29,31 @@
         text-align: center;
     }
     .footer{
-        margin-top: 30%;
+        margin-top: 40%;
     }
     .navbar-brand{
         font-size: 1.8em;
     }    
     #topContainer{
-        background-color: lightblue;
+        background-color: #E9EBEE;
         width: 100%;
         height: 100vh;
     }
     #textArea{
         width: 400px;
         height: 200px;
+    }
+    .textarea{
+        width: 350px;
+        height: 100px;
+        font-size: 1.1em;
+    }
+    h1{
+        font-style: italic;
+        font-weight: bold;
+    }
+    label{
+        font-weight: bold;
     }
     </style>
 
@@ -75,8 +87,8 @@
                 <h2 class="lead">Admin can send email to all the Users in this App </h2>
                 <form action="SendEmail" method="post" class="navbar-form navbar-center"/>
                 <div class="form-group">
-                    <label> Send Email</label>
-                    <input type="text" name="emailMessage" class="form-control" id="textArea"/><br>
+                    <label> Send Email:</label><br>
+                    <textarea class="textarea" type="text" name="emailMessage" class="form-control"></textarea><br>
                 </div>
                 
                     <label ></label>

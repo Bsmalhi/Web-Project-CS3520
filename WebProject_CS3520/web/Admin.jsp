@@ -35,7 +35,7 @@
         font-size: 1.8em;
     }    
     #topContainer{
-        background-color: lightblue;
+        background-color: lightcyan;
         width: 100%;
         height: 100vh;
     }

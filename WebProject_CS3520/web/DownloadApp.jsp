@@ -20,7 +20,7 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         
     <style type="text/css">
-        .navbar-brand{
+    .navbar-brand{
         font-size: 1.8em;
     }
     #topRow{
@@ -52,6 +52,10 @@
         font-size: 1.35em;
         font-weight: bolder
     }
+    h1{
+        font-style: italic;
+        font-weight: bold;
+    }
     </style>
     
     </head>
@@ -67,7 +71,7 @@
                         <span class="icon-bar"></span>
                         
                        </button>
-                       <a class="navbar-brand">Snap Chat</a> 
+                       <a class="navbar-brand">SnapMail</a> 
                  </div>
                 <div class="collapse navbar-collapse" >
                         <ul class="nav navbar-nav">

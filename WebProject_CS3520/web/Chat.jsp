@@ -1,7 +1,7 @@
 <%-- 
     Document   : Main_Will
     Created on : May 22, 2016, 4:13:37 PM
-    Author     : Will
+    Author     : Baljot
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -31,7 +31,7 @@
         width: 100vh;
     }
     .footer{
-        margin-top: 5%;
+        margin-top: 7%;
         text-align: center;
     }
     .navbar-brand{
@@ -86,6 +86,10 @@
         text-decoration: inherit;
         color: grey;
     }
+    #color{
+        background-color: #E6DFE9;
+        margin-top: -19px;
+    }
     </style>
   </head>
   <body id="background">
@@ -116,7 +120,7 @@
             <div class="col-lg-6 col-lg-offset-3" id="topRow">
                 <h1 class="marginTop"><%@ include file="Header.jsp" %></h1>
              
-                <h3> ${user.username}'s <a href ="EditUser.jsp" style="text-decoration: inherit;"> Account Settings</a></h3>
+                <h3> ${user.username}'s <a href ="EditUser.jsp" style="text-decoration: none; color: grey;"> Account Settings</a></h3>
 
                 
                 <br><br>
@@ -144,7 +148,7 @@
         
         <br>
             
-        <div >
+        <div id="color" >
             <h3 class="navbar-left">Inbox: ${ user.username}</h3>
             <div>         
                 <table class="border" border="1" style="margin:0.5em; width:100%" >
@@ -157,10 +161,10 @@
                     </tr>
                     <c:forEach items="${user.message}" var="m">
                        <tr>
-                           <td><c:out value="${m.number}"/></td>
-                           <td><c:out value="${m.fromuser}"/></td>
+                           <td style="font-weight: bold;"><c:out value="${m.number}"/></td>
+                           <td style="font-weight: bolder;"><c:out value="${m.fromuser}"/></td>
                            <td><c:out value="${m.year}-${m.month}-${m.day} ${m.hour}:${m.minute}:${m.second}"/></td>
-                           <td><c:out value="${m.message}"/></td>
+                           <td style="font-weight: bold; font-style: italic;"><c:out value="${m.message}"/></td>
                            <td>
                                 <form action="Chat" method="post">
                                     <input type="hidden" name="action" value="DELETE">
@@ -172,10 +176,11 @@
                     </c:forEach>
                 </table>
             </div>
-        </div>
             <div class="footer">
             <%@ include file="Footer.jsp" %>
             </div>
+        </div>
+            
     </body>
 </html>
  <!--

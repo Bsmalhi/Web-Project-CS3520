@@ -50,7 +50,7 @@
             }
             label{
                 color: white;
-                font-size: 1.2em;
+                font-size: 1.4em;
             }
             .footer{
                 color: white;
