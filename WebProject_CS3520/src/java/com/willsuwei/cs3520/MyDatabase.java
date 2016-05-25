@@ -17,7 +17,7 @@ import java.sql.Statement;
  * @author Will
  */
 public class MyDatabase {
-    private static String dbURL = "jdbc:mysql://localhost:3306";
+    private static String dbURL = "jdbc:mysql://willsuwei.com:3306";
     private static String username = "cs3520";
     private static String password = "cs3520";
     private static Connection connection;
