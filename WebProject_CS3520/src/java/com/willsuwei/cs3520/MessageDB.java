@@ -113,7 +113,6 @@ public class MessageDB {
             PreparedStatement ps = null;
             String query = "DELETE FROM cs3520.message WHERE id = ? ";
             ps = connection.prepareStatement(query);
-            //ps.setString(1, Integer.toString(id));
             ps.setInt(1, id);
             ps.executeUpdate();
         } catch (Exception e){
@@ -122,9 +121,5 @@ public class MessageDB {
         } finally{
             MyDatabase.CloseConnection();
         }
-    }
-    
-    public static void main(String[] str){
-        add(new Message(1, "asdf", "asdf", "Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message ", "1990", "01", "01", "01", "01", "01"));
     }
 }
