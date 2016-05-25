@@ -47,6 +47,8 @@
     }
     h1{
         color: white;
+        font-style: italic;
+        font-weight: bold;
     }
  
     </style>
@@ -64,7 +66,7 @@
                         <span class="icon-bar"></span>
                         
                        </button>
-                       <a class="navbar-brand">Snap Chat</a> 
+                       <a class="navbar-brand">SnapMail</a> 
                  </div>
                 <div class="collapse navbar-collapse" >
                         <ul class="nav navbar-nav">
@@ -77,7 +79,7 @@
         </div>
                 <div class="container contentContainer" id="topContainer">
                     <div class="col-md-6 col-md-offset-3" id="topRow">
-                        <h1 class="marginTop"> About Creators</h1>
+                        <h1 class="marginTop"> About Developers of SnapMail</h1>
                         <p>Thanks for visiting our Web Application. </p>
                         <p>This Site is a Collective effort of 2 Computer Science Students at CSUEB </p>
                         <p>Wei Su and Baljot Malhi both worked out to make SnapMail project a reality. <p>

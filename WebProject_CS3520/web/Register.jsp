@@ -50,6 +50,10 @@
                 font-size: 1.1em;
                 font-style: italic;
             }
+            h1{
+                font-style: italic;
+                font-weight: bold;
+            }
         </style>
     </head>
     <body>
