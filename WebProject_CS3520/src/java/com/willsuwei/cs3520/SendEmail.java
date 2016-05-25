@@ -56,7 +56,7 @@ public class SendEmail extends HttpServlet {
         try{
             String username = "com.willsuwei.cs3520@gmail.com";
             String password = "cs3520admin";
-            String title = "Snap Chat";
+            String title = "SnapMail";
 
             Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider());
             final String SSL_FACTORY = "javax.net.ssl.SSLSocketFactory";
