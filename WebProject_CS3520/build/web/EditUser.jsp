@@ -20,7 +20,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
         <style>
             #topContainer{       
-                background-image:url("Include/Images/forest.jpeg");
+                background-image:url("Include/Images/Mountain.jpeg");
                 width: 100%;
                 height:100vh;
                 -webkit-background-size: cover;
@@ -32,7 +32,7 @@
                 font-size: 3em;
             }
             .padd{
-                margin-left: 30px;
+                margin-left: 40px;
             }
             .marginTop{
                 margin-top: 50px;
@@ -44,6 +44,16 @@
             }
             .footer{
                 margin-top: 25%;
+            }
+            h1{
+                color: white;
+            }
+            label{
+                color: white;
+                font-size: 1.2em;
+            }
+            .footer{
+                color: white;
             }
         </style>
     </head>

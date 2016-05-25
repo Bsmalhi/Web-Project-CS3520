@@ -31,16 +31,20 @@
         width: 100vh;
     }
     .footer{
-        margin-top: 20%;
+        margin-top: 5%;
         text-align: center;
     }
     .navbar-brand{
         font-size: 1.8em;
     }    
     #topContainer{
-        background-image: url("Include/Images/Clouds.jpeg");
+        background-image: url("Include/Images/valley.jpeg");
         width: 100%;
         height: 100vh;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
     }
     #textArea{
         width: 400px;
@@ -63,7 +67,24 @@
     }
     #textArea{
         width: 400px;
-        height: 200px;
+        height: 100px;
+    }
+    .navbar-left{
+        margin: 0 0 10px 10px;
+    }
+    .input-group{
+        text-align: center;
+    }
+    #send{
+        margin-top: -10px;
+        
+    }
+    #container{
+        background-color: lightblue;
+    }
+    h3 a{
+        text-decoration: inherit;
+        color: grey;
     }
     </style>
   </head>
@@ -86,7 +107,7 @@
                             <li><a href="About.jsp">About</a></li>
                             <li><a href="DownloadApp.jsp">Download App</a></li>
                             <li class="active"><a href="#UserMain">Home Page</a></li>
-                            <li class="right"><a href="signOut">Sign Out</a></li>
+                            <li class="right"><a href="Welcome.jsp">Sign Out</a></li>
                         </ul>                                                                
                 </div>
             </div>
@@ -95,20 +116,27 @@
             <div class="col-lg-6 col-lg-offset-3" id="topRow">
                 <h1 class="marginTop"><%@ include file="Header.jsp" %></h1>
              
-                <h3> ${user.username}'s <a href ="EditUser.jsp" styele ="text-decoration: none;"> Account Settings</a></h3>
+                <h3> ${user.username}'s <a href ="EditUser.jsp" style="text-decoration: inherit;"> Account Settings</a></h3>
 
                 
                 <br><br>
 
                 <div>
-                    <h2>Send Message</h2>
+                    <h2 id="send"><span id="send" class="glyphicon glyphicon-envelope"> SendMessage</span></h2>
                     <form action="Chat" method="post">
                         <input type="hidden" name="action" value="SEND">
-                        <label>To:</label><br>
-                        <input type="text" name="username" required><br>
+                        
+                        
+                            <label>To:</label>
+                           <input type="text" name="username" required class="form-control" ><br>
+
+                       
+                        
                         <label>Message:</label><br>
-                        <input id="textArea" type="text" name="message" required><br>
+                       
+                        <textarea type="text" name="message" required class="form-control"></textarea><br>
                         <input type="submit" value="Send"><p><i>${message}</i><p>
+                        
                     </form>
                 </div>
             </div>
@@ -116,34 +144,34 @@
         
         <br>
             
-        <div class="container">
-            <div class="col-lg-8 col-lg-offset-3">
-            <h3 class="navbar-left"> ${ user.username}, Inbox</h3>
-           
-            <table class="border" border="1" style="margin:0.5em; width:100%" >
-                <tr>
-                    <th style="width: 3em"></th>
-                    <th style="width: 10em">From</th>
-                    <th style="width: 8em">Time</th>
-                    <th style="width: 10em">Message</th>
-                    <th style="width: 4em">Action</th>
-                </tr>
-                <c:forEach items="${user.message}" var="m">
-                   <tr>
-                       <td><c:out value="${m.number}"/></td>
-                       <td><c:out value="${m.fromuser}"/></td>
-                       <td><c:out value="${m.year}-${m.month}-${m.day} ${m.hour}:${m.minute}:${m.second}"/></td>
-                       <td><c:out value="${m.message}"/></td>
-                       <td>
-                            <form action="Chat" method="post">
-                                <input type="hidden" name="action" value="DELETE">
-                                <input type="hidden" name="id" value="${m.number}">
-                                <input type="submit" value="Delete">
-                            </form>
-                       </td>
+        <div >
+            <h3 class="navbar-left">Inbox: ${ user.username}</h3>
+            <div>         
+                <table class="border" border="1" style="margin:0.5em; width:100%" >
+                    <tr>
+                        <th style="width: 3em"></th>
+                        <th style="width: 10em">From</th>
+                        <th style="width: 8em">Day-Time</th>
+                        <th style="width: 10em">Message</th>
+                        <th style="width: 4em">Action</th>
                     </tr>
-                </c:forEach>
-            </table>
+                    <c:forEach items="${user.message}" var="m">
+                       <tr>
+                           <td><c:out value="${m.number}"/></td>
+                           <td><c:out value="${m.fromuser}"/></td>
+                           <td><c:out value="${m.year}-${m.month}-${m.day} ${m.hour}:${m.minute}:${m.second}"/></td>
+                           <td><c:out value="${m.message}"/></td>
+                           <td>
+                                <form action="Chat" method="post">
+                                    <input type="hidden" name="action" value="DELETE">
+                                    <input type="hidden" name="id" value="${m.number}">
+                                    <input type="submit" value="Delete">
+                                </form>
+                           </td>
+                        </tr>
+                    </c:forEach>
+                </table>
+            </div>
         </div>
             <div class="footer">
             <%@ include file="Footer.jsp" %>
