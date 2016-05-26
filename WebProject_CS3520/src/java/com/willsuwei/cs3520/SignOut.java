@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Will
  */
-@WebServlet(name = "SignOut", urlPatterns = {"/signOut"})
+@WebServlet(name = "SignOut", urlPatterns = {"/SignOut"})
 public class SignOut extends HttpServlet {
 
     /**
